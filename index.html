@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      <!-- Row 2: Workspace Mode, Live Cloud Status & Auth Bar -->
+      <!-- Row 2: Workspace Mode, Sync Status & Family PIN / Auth Bar -->
       <div class="pt-2.5 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
         <div class="flex flex-wrap items-center gap-2">
           <div class="inline-flex rounded-xl bg-slate-950 p-1 border border-slate-800">
@@ -99,7 +99,7 @@
           </div>
           <span id="sync-status-pill" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-medium">
             <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-            <span>Connecting Cloud...</span>
+            <span>Connecting...</span>
           </span>
         </div>
 
@@ -192,15 +192,11 @@
           </button>
         </div>
 
-        <div id="stroke-filter-pills" class="flex flex-wrap items-center gap-1">
-          <!-- Stroke buttons injected via JS -->
-        </div>
+        <div id="stroke-filter-pills" class="flex flex-wrap items-center gap-1"></div>
       </div>
     </section>
 
-    <!-- ====================================================================== -->
-    <!-- VIEW 1: PBs & 2027 QUALIFYING STANDARDS DASHBOARD                      -->
-    <!-- ====================================================================== -->
+    <!-- VIEW 1: PBs & 2027 QUALIFYING STANDARDS DASHBOARD -->
     <section id="view-dashboard" class="bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
       <div class="px-5 py-4 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
@@ -242,9 +238,7 @@
       </div>
     </section>
 
-    <!-- ====================================================================== -->
-    <!-- VIEW 2: MULTI-YEAR PROGRESSION CHARTS                                  -->
-    <!-- ====================================================================== -->
+    <!-- VIEW 2: MULTI-YEAR PROGRESSION CHARTS -->
     <section id="view-charts" class="hidden space-y-4">
       <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 shadow-xl">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-800">
@@ -271,7 +265,6 @@
           </div>
         </div>
 
-        <!-- Quick Stat Strip -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-5">
           <div class="bg-slate-950/70 border border-slate-800/90 rounded-xl p-3">
             <div class="text-[11px] uppercase tracking-wider text-slate-400">First Recorded</div>
@@ -291,10 +284,8 @@
           </div>
         </div>
 
-        <!-- SVG Container -->
         <div id="chart-svg-wrapper" class="relative w-full overflow-x-auto"></div>
 
-        <!-- Tooltip Footer -->
         <div id="chart-tooltip-footer" class="mt-2 min-h-[42px] px-4 py-2 rounded-lg bg-slate-900/80 border border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
           <span>Hover or tap any data point to inspect meet, date, and split notes.</span>
           <span class="flex items-center gap-3">
@@ -303,14 +294,11 @@
           </span>
         </div>
 
-        <!-- Popular Curves Quick Pills -->
         <div id="popular-chart-pills" class="mt-5 pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-1.5"></div>
       </div>
     </section>
 
-    <!-- ====================================================================== -->
-    <!-- VIEW 3: MASTER RACE LOG                                                -->
-    <!-- ====================================================================== -->
+    <!-- VIEW 3: MASTER RACE LOG -->
     <section id="view-log" class="hidden bg-slate-900/70 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
       <div class="p-4 sm:p-5 border-b border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
         <div class="relative flex-1 max-w-md">
@@ -360,9 +348,7 @@
     </section>
   </main>
 
-  <!-- ======================================================================== -->
-  <!-- MODAL: + LOG / SCAN SCREENSHOTS                                          -->
-  <!-- ======================================================================== -->
+  <!-- MODAL: + LOG / SCAN SCREENSHOTS -->
   <div id="modal-log" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-sm overflow-y-auto">
     <div class="w-full max-w-4xl bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden my-auto">
       <div class="px-5 py-4 bg-slate-950/70 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
@@ -411,7 +397,6 @@
           <button id="btn-save-gemini-key" type="button" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold self-end cursor-pointer">Done</button>
         </div>
 
-        <!-- Dropzone -->
         <div id="dropzone-box" class="relative border-2 border-dashed border-slate-700 hover:border-teal-500/50 bg-slate-950/50 rounded-2xl p-5 text-center transition">
           <input id="input-screenshot-files" type="file" accept="image/*" multiple class="hidden" />
           <label for="input-screenshot-files" class="flex flex-col items-center justify-center cursor-pointer">
@@ -430,7 +415,6 @@
           </div>
         </div>
 
-        <!-- Staged Swims Table -->
         <div id="staged-swims-container" class="hidden space-y-3 pt-2">
           <div class="flex items-center justify-between">
             <h4 class="text-xs sm:text-sm font-bold text-white">Review &amp; Confirm Extracted Swims (<span id="staged-count">0</span>)</h4>
@@ -526,24 +510,24 @@
     </div>
   </div>
 
-  <!-- ======================================================================== -->
-  <!-- MODAL: SHARE & LIVE CLOUD ACCESS                                         -->
-  <!-- ======================================================================== -->
+  <!-- MODAL: SHARE & FAMILY/COACH ACCESS -->
   <div id="modal-share" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm">
     <div class="w-full max-w-lg bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden">
       <div class="px-5 py-4 bg-slate-950/70 border-b border-slate-800 flex items-center justify-between">
         <div>
-          <h3 class="text-base font-bold text-white">Share &amp; Live Cloud Access</h3>
-          <p class="text-[11px] text-slate-400">Real-time multi-device sync for parents, coaches &amp; swimmers</p>
+          <h3 class="text-base font-bold text-white">Share &amp; Family / Coach Access</h3>
+          <p class="text-[11px] text-slate-400">Works on all phones, browsers &amp; GitHub links</p>
         </div>
         <button id="btn-close-share" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 cursor-pointer">✕</button>
       </div>
 
       <div class="p-5 space-y-5 text-xs sm:text-sm">
+        <div id="share-pin-box" class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 space-y-2.5"></div>
+
         <div class="space-y-2">
-          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400">1. Share Live Tracker Link</label>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400">2. Share Tracker Link</label>
           <p class="text-xs text-slate-300">
-            Anyone with this link can view Ruixuan&apos;s live PBs, progression charts, and race log immediately—no login wall required.
+            Anyone with this link can view Ruixuan&apos;s live PBs, progression charts, and race log immediately.
           </p>
           <div class="flex items-center gap-2">
             <input id="input-share-url" type="text" readonly class="flex-1 px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-slate-300 font-mono truncate" />
@@ -553,8 +537,7 @@
           </div>
         </div>
 
-        <div id="share-auth-box" class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2.5"></div>
-        <div id="share-pin-box" class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2.5"></div>
+        <div id="share-auth-box" class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2"></div>
       </div>
     </div>
   </div>
@@ -580,6 +563,10 @@
       writeBatch,
       getDocs
     } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    const DEFAULT_FAMILY_PIN = '2026';
+    const STORAGE_KEY_RACES = 'ruixuan_swim_tracker_races_v1';
+    const STORAGE_KEY_STANDARDS = 'ruixuan_swim_tracker_standards_v1';
 
     // =========================================================================
     // 1. FIREBASE INITIALIZATION
@@ -765,18 +752,40 @@
       { id: 97, date: '2026-11-15', meet: '4th SAQSFA 2026', team: 'RDP', course: 'LCM', ageGroup: '13-109', event: '200m Breast', round: 'Finals', time: '3:31.45', valid: true, notes: 'Current LCM PB (Debut) | Session 4 Heat 2 Lane 5' },
     ];
 
+    function loadInitialRaces() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY_RACES);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch {}
+      return [...INITIAL_RACES];
+    }
+
+    function loadInitialStandards() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY_STANDARDS);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch {}
+      return [...EVENT_CATALOG];
+    }
+
     // =========================================================================
     // 3. APPLICATION STATE
     // =========================================================================
     const state = {
       user: null,
       authReady: false,
-      workspaceMode: 'shared', // 'shared' | 'personal'
-      syncStatus: 'connecting',
-      cloudPin: '',
-      isPinUnlocked: sessionStorage.getItem('ruixuan_pin_unlocked') === 'true',
-      races: [...INITIAL_RACES],
-      standards: [...EVENT_CATALOG],
+      workspaceMode: 'shared',
+      syncStatus: auth ? 'connecting' : 'offline',
+      cloudPin: DEFAULT_FAMILY_PIN,
+      isPinUnlocked: localStorage.getItem('ruixuan_family_unlocked') === 'true',
+      races: loadInitialRaces(),
+      standards: loadInitialStandards(),
       activeTab: 'dashboard',
       courseFilter: 'LCM',
       strokeFilter: 'All',
@@ -796,13 +805,22 @@
       unsubMeta: null,
     };
 
+    function persistLocalCache() {
+      if (state.workspaceMode === 'shared') {
+        try {
+          localStorage.setItem(STORAGE_KEY_RACES, JSON.stringify(state.races));
+          localStorage.setItem(STORAGE_KEY_STANDARDS, JSON.stringify(state.standards));
+        } catch {}
+      }
+    }
+
     function showToast(msg) {
       const banner = document.getElementById('toast-banner');
       const text = document.getElementById('toast-text');
       text.textContent = msg;
       banner.classList.remove('hidden');
       clearTimeout(window._toastTimer);
-      window._toastTimer = setTimeout(() => banner.classList.add('hidden'), 3500);
+      window._toastTimer = setTimeout(() => banner.classList.add('hidden'), 3800);
     }
 
     function isGoogleUser() {
@@ -810,10 +828,9 @@
     }
 
     function canEditActiveWorkspace() {
-      if (state.workspaceMode === 'personal') return Boolean(state.user);
-      if (!isGoogleUser()) return false;
-      if (state.cloudPin && !state.isPinUnlocked) return false;
-      return true;
+      if (isGoogleUser()) return true;
+      if (state.isPinUnlocked) return true;
+      return false;
     }
 
     function getCloudCollections(mode, uid) {
@@ -880,7 +897,7 @@
           }
           EVENT_CATALOG.forEach((s) => batch.set(doc(standardsCol, s.event.replace(/\s+/g, '_')), s));
           if (state.workspaceMode === 'shared') {
-            batch.set(metaDoc, { swimmerName: 'Ruixuan Lee', editPin: '', seededAt: new Date().toISOString() });
+            batch.set(metaDoc, { swimmerName: 'Ruixuan Lee', editPin: DEFAULT_FAMILY_PIN, seededAt: new Date().toISOString() });
           }
           await batch.commit();
         }
@@ -897,6 +914,7 @@
           }));
           if (list.length > 0 || state.workspaceMode === 'personal') {
             state.races = list;
+            persistLocalCache();
           }
           state.syncStatus = 'synced';
           renderAll();
@@ -916,6 +934,7 @@
             const orderMap = new Map(EVENT_CATALOG.map((item, idx) => [item.event, idx]));
             list.sort((a, b) => (orderMap.get(a.event) ?? 99) - (orderMap.get(b.event) ?? 99));
             state.standards = list;
+            persistLocalCache();
             renderAll();
           }
         },
@@ -925,7 +944,7 @@
       state.unsubMeta = onSnapshot(
         metaDoc,
         (docSnap) => {
-          state.cloudPin = docSnap.exists() ? (docSnap.data().editPin || '') : '';
+          state.cloudPin = docSnap.exists() ? (docSnap.data().editPin || DEFAULT_FAMILY_PIN) : DEFAULT_FAMILY_PIN;
           renderHeaderAndAuth();
         },
         (err) => console.error('Meta snapshot error:', err)
@@ -1007,37 +1026,43 @@
         pill.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span><span>Syncing...</span>`;
       } else {
         pill.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-medium';
-        pill.innerHTML = `<span class="w-2 h-2 rounded-full bg-slate-400"></span><span>${state.syncStatus === 'connecting' ? 'Connecting...' : 'Offline Cache'}</span>`;
+        pill.innerHTML = `<span class="w-2 h-2 rounded-full bg-slate-400"></span><span>${state.syncStatus === 'connecting' ? 'Connecting...' : 'Local Device Sync'}</span>`;
       }
 
       const authBar = document.getElementById('auth-controls-bar');
-      if (isGoogleUser()) {
-        const lockText = state.cloudPin && !state.isPinUnlocked ? 'Read-Only (PIN)' : 'Editor';
+      if (canEditActiveWorkspace()) {
+        const label = isGoogleUser() ? (state.user.displayName || state.user.email) : 'Family / Coach Editor Unlocked';
         authBar.innerHTML = `
-          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-xl bg-slate-950/90 border border-slate-800">
-            <span class="text-slate-200 font-medium truncate max-w-[150px]">${state.user.displayName || state.user.email}</span>
-            <span class="text-[10px] px-1.5 py-0.5 rounded bg-teal-500/15 text-teal-300 font-semibold">${lockText}</span>
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
+            <span class="text-emerald-200 font-medium truncate max-w-[190px]">✓ ${label}</span>
           </div>
-          <button id="btn-google-signout" type="button" class="px-2.5 py-1 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition cursor-pointer">Sign Out</button>
+          <button id="btn-lock-editor" type="button" class="px-2.5 py-1 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition cursor-pointer">Lock</button>
         `;
-        document.getElementById('btn-google-signout').onclick = async () => {
-          await signOut(auth);
-          await signInAnonymously(auth);
+        document.getElementById('btn-lock-editor').onclick = async () => {
+          if (auth && isGoogleUser()) {
+            await signOut(auth);
+            await signInAnonymously(auth);
+          }
+          state.isPinUnlocked = false;
+          localStorage.removeItem('ruixuan_family_unlocked');
           state.workspaceMode = 'shared';
-          showToast('Signed out — switched to Guest Live View.');
+          showToast('Locked to Guest Read-Only View.');
+          renderAll();
         };
       } else {
         authBar.innerHTML = `
-          <span class="text-slate-400 hidden md:inline">Guest View (Live Read-Only)</span>
-          <button id="btn-google-signin" type="button" class="px-3 py-1 rounded-xl bg-white hover:bg-slate-100 text-slate-950 font-semibold shadow-sm transition cursor-pointer">Sign In with Google to Edit</button>
+          <span class="text-slate-400 hidden md:inline">Guest View (Read-Only)</span>
+          <button id="btn-unlock-pin-bar" type="button" class="px-3 py-1 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow-sm transition cursor-pointer">Unlock Editing (Family PIN)</button>
         `;
-        document.getElementById('btn-google-signin').onclick = triggerGoogleSignIn;
+        document.getElementById('btn-unlock-pin-bar').onclick = () => {
+          document.getElementById('btn-open-share').click();
+        };
       }
     }
 
     async function triggerGoogleSignIn() {
       if (!auth) {
-        showToast('Cloud auth unavailable in offline preview.');
+        showToast(`Google Sign-In isn't active on external hosts — use Family PIN (${state.cloudPin || DEFAULT_FAMILY_PIN}) above!`);
         return;
       }
       try {
@@ -1045,7 +1070,7 @@
         await signInWithPopup(auth, provider);
         showToast('Signed in with Google! Live cloud editing enabled.');
       } catch (err) {
-        showToast(err?.message || 'Google Sign-In was cancelled or blocked.');
+        showToast(`Google popup blocked in this browser — enter Family PIN (${state.cloudPin || DEFAULT_FAMILY_PIN}) above to unlock editing!`);
       }
     }
 
@@ -1053,7 +1078,6 @@
       renderHeaderAndAuth();
       const summaries = computeEventSummaries();
 
-      // KPIs
       const validRaces = state.races.filter((r) => r.valid && parseTimeToSeconds(r.time) !== null).length;
       const activePbs = summaries.filter((s) => s.lcmPbObj || s.scmPbObj).length;
       const qualifiedSg = summaries.filter((s) => s.lcmSgGap !== null && s.lcmSgGap <= 0).length;
@@ -1076,7 +1100,6 @@
       document.getElementById('th-primary-pb').textContent = state.courseFilter === 'LCM' ? 'Current LCM PB' : 'Current SCM PB';
       document.getElementById('th-secondary-pb').textContent = state.courseFilter === 'LCM' ? 'SCM PB' : 'LCM PB';
 
-      // Stroke Pills
       const strokeContainer = document.getElementById('stroke-filter-pills');
       strokeContainer.innerHTML = ['All', 'Freestyle', 'Backstroke', 'Breaststroke', 'Butterfly', 'IM']
         .map(
@@ -1174,7 +1197,8 @@
       tbody.querySelectorAll('.btn-edit-std').forEach((btn) => {
         btn.onclick = () => {
           if (!canEditActiveWorkspace()) {
-            showToast('Sign in with Google in the top bar to edit qualifying standards.');
+            document.getElementById('btn-open-share').click();
+            showToast(`Enter Family PIN (${state.cloudPin || DEFAULT_FAMILY_PIN}) to edit qualifying standards.`);
             return;
           }
           state.editingEvent = btn.dataset.editEv;
@@ -1202,6 +1226,7 @@
           const idx = state.standards.findIndex((s) => s.event === ev);
           if (idx >= 0) {
             state.standards[idx] = { ...state.standards[idx], sgMts: parsedSg, qldQt: parsedQld };
+            persistLocalCache();
             if (db && state.user) {
               const { standardsCol } = getCloudCollections(state.workspaceMode, state.user.uid);
               await setDoc(doc(standardsCol, ev.replace(/\s+/g, '_')), state.standards[idx], { merge: true });
@@ -1480,7 +1505,6 @@
       renderProgressionChart();
     };
 
-    // Populate event selects
     const eventOptionsHtml = EVENT_CATALOG.map((s) => `<option value="${s.event}">${s.event}</option>`).join('');
     document.getElementById('log-event-select').innerHTML = `<option value="ALL">All Events</option>${eventOptionsHtml}`;
     document.getElementById('manual-event').innerHTML = eventOptionsHtml;
@@ -1502,22 +1526,17 @@
       renderAll();
     };
 
-    // Workspace mode switchers
     document.getElementById('btn-mode-shared').onclick = () => {
       state.workspaceMode = 'shared';
       attachCloudListeners();
       renderAll();
     };
     document.getElementById('btn-mode-personal').onclick = () => {
-      if (!isGoogleUser()) {
-        showToast('Sign in with Google to create your own personal swimmer cloud!');
-      }
       state.workspaceMode = 'personal';
       attachCloudListeners();
       renderAll();
     };
 
-    // Export CSV
     document.getElementById('btn-export-csv').onclick = () => {
       const headers = ['Date', 'Meet Name', 'Team', 'Course', 'Age Group', 'Event', 'Round', 'Time (m:ss.00)', 'Seconds', 'Valid for PB', 'Notes'];
       const rows = [...state.races]
@@ -1536,7 +1555,7 @@
       showToast('Exported complete dataset to CSV');
     };
 
-    // Share Modal Logic
+    // Share & Family PIN Modal Logic
     document.getElementById('btn-open-share').onclick = () => {
       document.getElementById('input-share-url').value = window.location.href;
       renderShareModalContents();
@@ -1556,68 +1575,64 @@
     };
 
     function renderShareModalContents() {
-      const authBox = document.getElementById('share-auth-box');
-      if (isGoogleUser()) {
-        authBox.innerHTML = `<div class="text-xs text-slate-300">Signed in as <strong class="text-white">${state.user.displayName || state.user.email}</strong>. New swims and screenshots sync automatically across all devices.</div>`;
-      } else {
-        authBox.innerHTML = `
-          <div class="text-xs text-slate-400 mb-2">Sign in with Google to add new race results, scan screenshots, or switch to your own private swimmer cloud.</div>
-          <button id="modal-btn-google-signin" type="button" class="px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-950 text-xs font-bold cursor-pointer">Sign In with Google</button>
-        `;
-        document.getElementById('modal-btn-google-signin').onclick = triggerGoogleSignIn;
-      }
-
       const pinBox = document.getElementById('share-pin-box');
-      if (state.cloudPin && !state.isPinUnlocked) {
+      const activePin = state.cloudPin || DEFAULT_FAMILY_PIN;
+
+      if (!canEditActiveWorkspace()) {
         pinBox.innerHTML = `
-          <div class="text-xs font-semibold text-amber-300 mb-1.5">Family / Coach Edit PIN Required</div>
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-300">1. Instant Family / Coach Edit Unlock</span>
+            <span class="px-2 py-0.5 rounded-full bg-slate-900 text-amber-200 font-mono text-[11px]">Default PIN: ${activePin}</span>
+          </div>
+          <p class="text-xs text-slate-300 mb-2">Enter the Family PIN (<strong class="font-mono text-amber-300">${activePin}</strong>) to immediately log races, scan screenshots, and edit standards on this device:</p>
           <div class="flex gap-2">
-            <input id="input-verify-pin" type="password" maxlength="6" placeholder="Enter PIN" class="flex-1 px-3 py-1.5 rounded-xl bg-slate-900 border border-amber-500/40 text-xs text-white font-mono" />
-            <button id="btn-verify-pin" type="button" class="px-3.5 py-1.5 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold cursor-pointer">Unlock</button>
+            <input id="input-verify-pin" type="password" inputmode="numeric" maxlength="6" placeholder="Enter PIN (${activePin})" class="flex-1 px-3 py-2 rounded-xl bg-slate-950 border border-amber-500/50 text-sm text-white font-mono" />
+            <button id="btn-verify-pin" type="button" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold cursor-pointer">Unlock Editing</button>
           </div>
         `;
         document.getElementById('btn-verify-pin').onclick = () => {
-          if (document.getElementById('input-verify-pin').value.trim() === state.cloudPin) {
+          if (document.getElementById('input-verify-pin').value.trim() === activePin) {
             state.isPinUnlocked = true;
-            sessionStorage.setItem('ruixuan_pin_unlocked', 'true');
-            renderShareModalContents();
-            renderHeaderAndAuth();
-            showToast('Family/Coach Edit PIN unlocked!');
+            localStorage.setItem('ruixuan_family_unlocked', 'true');
+            document.getElementById('modal-share').classList.add('hidden');
+            renderAll();
+            showToast('Family / Coach Edit Mode unlocked! You can now log swims & scan screenshots.');
           } else {
-            showToast('Incorrect PIN.');
+            showToast(`Incorrect PIN. Default Family PIN is ${DEFAULT_FAMILY_PIN}.`);
           }
         };
-      } else if (isGoogleUser()) {
+      } else {
         pinBox.innerHTML = `
-          <div class="text-xs font-semibold text-slate-300 mb-1.5">Optional Family / Coach Edit PIN (${state.cloudPin ? 'Active' : 'Off'})</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-300 mb-1">1. Family / Coach Edit Mode Unlocked ✓</div>
+          <p class="text-xs text-slate-300 mb-2">Editing is active on this device. You can change the 4-digit PIN below:</p>
           <div class="flex flex-wrap gap-2">
-            <input id="input-set-pin" type="text" maxlength="6" placeholder="4-digit PIN" class="w-36 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-xs text-white font-mono" />
-            <button id="btn-set-pin" type="button" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-teal-300 text-xs font-semibold border border-slate-700 cursor-pointer">Save PIN</button>
-            ${state.cloudPin ? `<button id="btn-clear-pin" type="button" class="px-3 py-1.5 rounded-xl bg-rose-500/15 text-rose-300 text-xs font-semibold cursor-pointer">Remove PIN</button>` : ''}
+            <input id="input-set-pin" type="text" inputmode="numeric" maxlength="6" placeholder="New 4-digit PIN" class="w-40 px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white font-mono" />
+            <button id="btn-set-pin" type="button" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-teal-300 text-xs font-semibold border border-slate-700 cursor-pointer">Update PIN</button>
           </div>
         `;
         document.getElementById('btn-set-pin').onclick = async () => {
           const val = document.getElementById('input-set-pin').value.replace(/\D/g, '');
           if (val.length < 4) return showToast('Enter at least 4 digits.');
+          state.cloudPin = val;
           if (db && state.user) {
             const { metaDoc } = getCloudCollections('shared', state.user.uid);
             await setDoc(metaDoc, { editPin: val }, { merge: true });
-            state.isPinUnlocked = true;
-            sessionStorage.setItem('ruixuan_pin_unlocked', 'true');
-            showToast('4-digit Edit PIN enabled.');
           }
+          showToast(`Family PIN updated to ${val}.`);
         };
-        if (state.cloudPin) {
-          document.getElementById('btn-clear-pin').onclick = async () => {
-            if (db && state.user) {
-              const { metaDoc } = getCloudCollections('shared', state.user.uid);
-              await setDoc(metaDoc, { editPin: '' }, { merge: true });
-              showToast('Edit PIN removed.');
-            }
-          };
-        }
+      }
+
+      const authBox = document.getElementById('share-auth-box');
+      if (isGoogleUser()) {
+        authBox.innerHTML = `<div class="text-xs text-slate-300">Signed in with Google as <strong class="text-white">${state.user.displayName || state.user.email}</strong>.</div>`;
       } else {
-        pinBox.innerHTML = `<div class="text-[11px] text-slate-500">Sign in with Google to configure or unlock the optional Family/Coach PIN.</div>`;
+        authBox.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <p class="text-[11px] text-slate-400 flex-1">Note: Google Sign-In popups may be blocked inside mobile WebViews or GitHub Pages—use the Family PIN above if Google Sign-In doesn&apos;t open.</p>
+            <button id="modal-btn-google-signin" type="button" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold border border-slate-700 cursor-pointer">Google Sign-In</button>
+          </div>
+        `;
+        document.getElementById('modal-btn-google-signin').onclick = triggerGoogleSignIn;
       }
     }
 
@@ -1625,7 +1640,7 @@
     document.getElementById('btn-open-log').onclick = () => {
       if (!canEditActiveWorkspace()) {
         document.getElementById('btn-open-share').click();
-        showToast('Sign in with Google to upload screenshots or log new races.');
+        showToast(`Enter Family PIN (${state.cloudPin || DEFAULT_FAMILY_PIN}) to unlock editing.`);
         return;
       }
       document.getElementById('modal-error-banner').classList.add('hidden');
@@ -1647,7 +1662,6 @@
       document.getElementById('modal-tab-screenshot').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer text-slate-400 hover:text-white';
     };
 
-    // Manual Form Submit
     document.getElementById('panel-manual').onsubmit = async (e) => {
       e.preventDefault();
       const errBanner = document.getElementById('modal-error-banner');
@@ -1674,21 +1688,21 @@
         round: document.getElementById('manual-round').value,
         time: isSpecial ? rawTime : formatSecondsToSwimTime(sec),
         valid: !isSpecial,
-        notes: document.getElementById('manual-notes').value.trim() || 'Logged via Cloud Tracker',
+        notes: document.getElementById('manual-notes').value.trim() || 'Logged via Swim Tracker',
       };
 
       state.races.push(entry);
+      persistLocalCache();
       if (db && state.user) {
         const { recordsCol } = getCloudCollections(state.workspaceMode, state.user.uid);
         await setDoc(doc(recordsCol, String(entry.id)), entry);
       }
       document.getElementById('manual-time').value = '';
       document.getElementById('modal-log').classList.add('hidden');
-      showToast(`Saved ${entry.event} (${entry.time}) to Live Cloud!`);
+      showToast(`Saved ${entry.event} (${entry.time})!`);
       renderAll();
     };
 
-    // Screenshot Upload & OCR Logic
     document.getElementById('engine-btn-ocr').onclick = () => {
       state.extractionEngine = 'ocr';
       document.getElementById('engine-btn-ocr').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold border transition cursor-pointer bg-cyan-500/20 text-cyan-300 border-cyan-500/40';
@@ -1791,7 +1805,6 @@
             });
           });
         } else {
-          // Load Tesseract.js dynamically
           if (!window.Tesseract) {
             await new Promise((resolve, reject) => {
               const s = document.createElement('script');
@@ -1948,24 +1961,35 @@
           round: row.round,
           time: isSpecial ? row.time.toUpperCase() : formatSecondsToSwimTime(sec),
           valid: !isSpecial,
-          notes: 'Scanned via HTML Tracker',
+          notes: 'Scanned via Tracker',
         };
         state.races.push(entry);
         if (batch && cols) batch.set(doc(cols.recordsCol, String(entry.id)), entry);
       }
 
+      persistLocalCache();
       if (batch) await batch.commit();
       state.stagedSwims = [];
       state.uploadedImages = [];
       renderUploadedThumbs();
       renderStagedTable();
       document.getElementById('modal-log').classList.add('hidden');
-      showToast('Saved extracted results to Live Cloud!');
+      showToast('Saved extracted results!');
       renderAll();
     };
 
     document.getElementById('btn-reset-defaults').onclick = async () => {
-      if (!canEditActiveWorkspace()) return showToast('Sign in with Google to reset cloud records.');
+      if (!canEditActiveWorkspace()) {
+        document.getElementById('btn-open-share').click();
+        return showToast(`Enter Family PIN (${state.cloudPin || DEFAULT_FAMILY_PIN}) to reset records.`);
+      }
+      if (state.workspaceMode === 'shared') {
+        state.races = [...INITIAL_RACES];
+        state.standards = [...EVENT_CATALOG];
+      } else {
+        state.races = [];
+      }
+      persistLocalCache();
       if (db && state.user) {
         const { recordsCol, standardsCol } = getCloudCollections(state.workspaceMode, state.user.uid);
         const snap = await getDocs(recordsCol);
@@ -1976,8 +2000,9 @@
           EVENT_CATALOG.forEach((s) => batch.set(doc(standardsCol, s.event.replace(/\s+/g, '_')), s));
         }
         await batch.commit();
-        showToast('Cloud dataset reset to baseline.');
       }
+      showToast('Dataset reset to baseline.');
+      renderAll();
     };
 
     // Boot Application
